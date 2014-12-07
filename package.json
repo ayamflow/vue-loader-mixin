@@ -1,0 +1,27 @@
+{
+  "name": "vue-loader-mixin",
+  "version": "1.0.0",
+  "description": "Preloader mixin for Vue.js (using PreloadJS)",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayamflow/vue-loader-mixin"
+  },
+  "keywords": [
+    "preloader",
+    "loader",
+    "preloadjs",
+    "vue",
+    "vuejs",
+    "mixin"
+  ],
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayamflow/vue-loader-mixin/issues"
+  },
+  "homepage": "https://github.com/ayamflow/vue-loader-mixin"
+}

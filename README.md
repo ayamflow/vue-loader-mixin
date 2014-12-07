@@ -5,6 +5,23 @@ Preloader mixin for Vue.js (using PreloadJS)
 
 ## Usage
 
+You will need to add [PreloadJS](http://www.createjs.com/#!/PreloadJS) to your project.
+With CommonJS/Browserify you will probably need [napa](https://github.com/shama/napa).
+
+```js
+"browser": {
+    "preloadjs": "./node_modules/preloadjs/lib/preloadjs-0.4.1.min.js"
+  },
+  "browserify-shim": {
+    "preloadjs": "preloadjs"
+  },
+  "napa": {
+    "preloadjs": "CreateJS/PreloadJS"
+  },
+```
+
+Then with the VM:
+
 ```js
 var loaderMixin = require('vue-loader-mixin');
 

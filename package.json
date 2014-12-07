@@ -1,6 +1,6 @@
 {
   "name": "vue-loader-mixin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Preloader mixin for Vue.js (using PreloadJS)",
   "main": "index.js",
   "scripts": {

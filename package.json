@@ -4,7 +4,8 @@
   "description": "Preloader mixin for Vue.js (using PreloadJS)",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "browserify test/index.js | testling",
+    "test-browser": "beefy test/index.js:test/build.js --debug=false"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,10 @@
   "homepage": "https://github.com/ayamflow/vue-loader-mixin",
   "dependencies": {
     "resource-loader": "^1.2.2"
+  },
+  "devDependencies": {
+    "function-bind": "^1.0.2",
+    "tape": "^3.5.0",
+    "vue": "^0.11.5"
   }
 }

@@ -1,18 +1,16 @@
 'use strict';
 
-var preloadjs = require('preloadjs');
+var Loader = require('resource-loader');
 
 module.exports = {
     /*
         Properly stop & destroy the loader
      */
     beforeDestroy: function() {
-        if(this.preloader) {
-            this.preloader.setPaused(true);
-            this.preloader.off();
-            this.preloader.removeAll();
-            this.preloader.close();
-            this.preloader = null;
+        if(this.loader) {
+            this.loader.removeAllListeners();
+            this.loader.reset();
+            this.loader = null;
         }
     },
 
@@ -20,12 +18,19 @@ module.exports = {
         load: function() {
             var manifest = this.$options.manifest;
 
-            this.preloader = new createjs.LoadQueue();
-            this.preloader.on('error', this._onLoadError);
-            this.preloader.on('complete', this._onLoadComplete);
-            this.preloader.on('complete', this._onLoadComplete);
+            var loader = new Loader();
+            loader.on('error', this._onLoadError);
+            loader.on('progress', this._onLoadProgress);
+            loader.on('complete', this._onLoadComplete);
+
+            manifest.forEach(function(file) {
+                loader.add(file, file);
+            });
+
+            loader.load();
             this.$emit('load:start');
-            this.preloader.loadManifest(manifest);
+
+            this.loader = loader;
         },
 
         _onLoadProgress: function(event) {

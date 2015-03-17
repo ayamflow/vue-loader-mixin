@@ -34,7 +34,7 @@ var root = new Vue({
 
     ready: function() {
         // Explicit call
-        this.startPreloader();
+        this.load();
     },
 
     methods: {
